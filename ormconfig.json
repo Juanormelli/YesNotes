@@ -1,11 +1,11 @@
 {
    "type": "postgres",
-   "port": 5433,
+   "port": 5432,
    "host": "localhost",
+   "database": "login",
+   "username": "juan",
+   "password": "jl1506",
    
-   "username": "docker",
-   "password": "ignite",
-   "database": "r",
    "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
    "entities": ["./src/modules/**/entities/*.ts"],
    "cli": {
