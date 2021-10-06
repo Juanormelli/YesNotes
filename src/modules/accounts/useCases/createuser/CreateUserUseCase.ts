@@ -19,13 +19,13 @@ class CreateUserUseCase{
         const userAlreadyExistsByEmail = await this.usersRepository.findByEmail(email)
 
         if(userAlreadyExistsByEmail){
-            throw new AppError("Email already in use")
+            throw await new AppError("Email already in use")
         }
 
         const userAlreadyExistsByUsername= await this.usersRepository.findByUserName(username)
 
         if (userAlreadyExistsByUsername){
-            throw new AppError("Username already in use!")
+            throw await new AppError("Username already in use!")
         }
 
         const passwordHash = await hash(password,8)

@@ -4,6 +4,7 @@ import { IUserRepository } from "../IUserRepository";
 
 
 class UsersRepositoryInMemory implements IUserRepository{
+  
     users: User[] = []
 
     async create({username, password, email, id}:ICreateUserDTO): Promise<User> {
@@ -26,6 +27,10 @@ class UsersRepositoryInMemory implements IUserRepository{
         const user = this.users.find(user => user.email === email)
 
         return user
+    }
+
+    comparePassword(username:string,password: string): Promise<boolean> {
+        throw new Error("Method not implemented.");
     }
 
 }

@@ -7,6 +7,8 @@ interface IUserRepository{
 
     findByEmail(email:string):Promise<User> 
 
+    comparePassword(username: string,password:string):Promise<boolean>
+
 
 
 
