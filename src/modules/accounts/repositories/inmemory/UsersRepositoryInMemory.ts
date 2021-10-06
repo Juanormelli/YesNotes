@@ -13,7 +13,7 @@ class UsersRepositoryInMemory implements IUserRepository{
         Object.assign(user, {username, password, email})
 
         this.users.push(user)
-        console.log(this.users)
+        
         return user
         
     }
@@ -29,8 +29,13 @@ class UsersRepositoryInMemory implements IUserRepository{
         return user
     }
 
-    comparePassword(username:string,password: string): Promise<boolean> {
-        throw new Error("Method not implemented.");
+    async comparePassword(username:string,password: string): Promise<boolean> {
+        const user = this.users.find(user => user.username === username)
+
+        if (user.password === password) {
+            return true
+        } 
+        return false
     }
 
 }

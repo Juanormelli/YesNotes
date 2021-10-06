@@ -9,7 +9,7 @@ class CreateUserController{
     async handle(request: Request, response: Response): Promise<Response>{
 
         const {username, password, email, id} = request.body
-        console.log(username, password)
+        
         const createUser = container.resolve(CreateUserUseCase)
 
         await createUser.execute({
