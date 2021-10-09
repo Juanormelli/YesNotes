@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="formlogin">
+        <div class="text">
+            <h1 class="signin">Login</h1>
+            <p class="txt">Entre e comece a gerenciar seus candidatos</p>
+
+              <p class="label">Nome de usuario</p>
+              <input type="text"  class="username" id="username"/>
+              <p class="label">Senha</p>
+              <input type="password"  class="password" id="password"/>
+              <button class="btn" onclick="post()">Login</button>
+                
+            
+            <button type="button" class="btn"  onclick="location.href='cadastro.html'">Cadastre-se</button>
+
+        </div>
+    </div>
+    
+  </body>
+  
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script >
+    
+    
+    
+    
+    
+    async function post (){
+      var username = document.getElementById('username').value
+      var password = document.getElementById("password").value
+
+      await axios({
+      
+      method:"post",
+      url:"http://localhost:3335/auth",
+      data:{
+        username:username,
+        password:password
+      }
+    }).then(response => window.alert("Login realizado com sucesso"))
+      .catch(error => window.alert(error.response.data.message))
+      
+    }
+    
+
+
+  </script>
+</html>

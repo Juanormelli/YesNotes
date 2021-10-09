@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="formlogin">
+      <div class="text">
+        <h1 class="signin">Cadastre-se</h1>
+        <p class="txt">
+          Realize seu cadastro, e inicie ja a organização de suas tarefas
+        </p>
+
+        <p class="label">Nome de usuario</p>
+        <input type="text" class="username" id="username"/>
+        <p class="label">Email</p>
+        <input type="email" class="email" id="email" />
+        <p class="label">Senha</p>
+        <input type="password" class="password" id="password" />
+
+        <button class="btn" onclick="post()" >Cadastre-se</button>
+      </div>
+    </div>
+  </body>
+
+    
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script >
+    
+    
+    
+    
+    
+    async function post (){
+      var username = document.getElementById('username').value
+      var password = document.getElementById("password").value
+      var email = document.getElementById("email").value
+
+      await axios({
+      
+      method:"post",
+      url:"http://localhost:3335/users",
+      data:{
+        username:username,
+        password:password,
+        email:email
+      }
+    }).then(response => {
+                        alert("Cadastro Realizado")
+
+                        window.location.href ="index.html"})
+      .catch(error => window.alert(error.response.data.message))
+      
+    }
+    
+
+
+  </script>
+</html>

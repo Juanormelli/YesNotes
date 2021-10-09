@@ -1,0 +1,91 @@
+body{
+    position: relative;
+    width: auto;
+    height: auto;
+    background-color: #093545;
+}
+
+.formlogin{
+    position: absolute;
+    width: 347px;
+    height: 406px;
+    left: 490px;
+    top: 55px;
+    color: #FFFFFF;
+
+}
+
+.text{
+    
+
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 80px;
+    top: 0;
+
+    text-align: center;
+
+    
+}
+.txt{
+    
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    top: 0%;
+    left: 30px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+input{
+    border: none;
+    width: 300px;
+    height: 45px;
+    background: #224957;
+    border-radius: 10px;
+    outline: none;
+    top: 0;
+    color: #FFFFFF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+
+
+    text-align:center;
+
+    
+}
+
+.btn{
+    border: none;
+    width: 300px;
+    height: 45px;
+    color: #FFFFFF;
+    background: #1ab96a;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+.label{
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 10px;
+
+    text-align: left;
+    text-indent: 25px;
+
+    color: #FFFFFF;
+    bottom:0;
+    
+
+}
