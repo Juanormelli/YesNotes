@@ -3,7 +3,7 @@ import { Note } from "../typeorm/entities/Notes";
 
 
 interface INotesRepository{
-    create(data:ICreateNoteDTO):Promise<void>;
+    create(data:ICreateNoteDTO):Promise<Note>;
 
 
     findByUserId(user_id:string):Promise<Note[]>;

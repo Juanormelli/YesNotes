@@ -19,14 +19,15 @@ class NotesRepository implements INotesRepository{
     }
 
 
-    async create({user_id, content, title}:ICreateNoteDTO): Promise<void> {
+    async create({user_id, content, title}:ICreateNoteDTO): Promise<Note> {
         const note = this.repository.create({
             user_id,
             content, 
             title
         })
 
-        await this.repository.save(note)
+         await this.repository.save(note)
+        return note
     }
     async findByUserId(user_id: string): Promise<Note[]> {
         return await this.repository.find({user_id})

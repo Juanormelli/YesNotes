@@ -15,9 +15,9 @@ class CreateNotesUseCase{
 
         
 
-        await this.notesRepository.create({user_id, content, title})
+        const note =await this.notesRepository.create({user_id, content, title})
 
-
+        return note
     }
 }
 

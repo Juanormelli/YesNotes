@@ -15,10 +15,10 @@ class CreateNotesController{
 
         const createNote = container.resolve(CreateNotesUseCase)
 
-        await createNote.execute(user_id,content,title)
+        const note=  await createNote.execute(user_id,content,title)
 
 
-        return response.status(200).send()
+        return response.json(note).send()
     }
 }
 
