@@ -11,11 +11,11 @@ class CreateNotesUseCase{
     ){}
 
 
-    async execute(user_id: string, content: string){
+    async execute(user_id: string, content: string, title:string){
 
         
 
-        await this.notesRepository.create({user_id, content})
+        await this.notesRepository.create({user_id, content, title})
 
 
     }

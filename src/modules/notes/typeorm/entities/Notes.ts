@@ -23,6 +23,10 @@ class Note{
     @Column()
     content:string
 
+    @Column()
+    title:string
+
+
 
     constructor(){
         if(!this.id){

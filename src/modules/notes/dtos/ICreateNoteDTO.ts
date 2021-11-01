@@ -1,7 +1,8 @@
 
 interface ICreateNoteDTO{
     user_id: string;
-    content: string
+    content: string;
+    title: string;
 
 
 }

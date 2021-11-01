@@ -13,12 +13,17 @@ class NotesRepository implements INotesRepository{
     constructor(){
         this.repository = getRepository(Note)
     }
+    async findById(id: string): Promise<Note> {
+        const note = await this.repository.findOne(id)
+        return note
+    }
 
 
-    async create({user_id, content}:ICreateNoteDTO): Promise<void> {
+    async create({user_id, content, title}:ICreateNoteDTO): Promise<void> {
         const note = this.repository.create({
             user_id,
-            content
+            content, 
+            title
         })
 
         await this.repository.save(note)
@@ -26,6 +31,9 @@ class NotesRepository implements INotesRepository{
     async findByUserId(user_id: string): Promise<Note[]> {
         return await this.repository.find({user_id})
     }
+
+
+
     async update(id: string, content:string): Promise<void> {
         const note = await this.repository.findOne(id)
 
@@ -33,12 +41,12 @@ class NotesRepository implements INotesRepository{
 
         await this.repository.save(note)
     }
-    async delete(id: string): Promise<Note> {
-        const note = await this.repository.findOne(id)
 
-        await this.repository.createQueryBuilder().delete().where("id = :id",{id:id}).execute()
 
-        return note 
+    async delete(id: string): Promise<void> {
+        
+        await this.repository.delete(id)
+
 
     }
 

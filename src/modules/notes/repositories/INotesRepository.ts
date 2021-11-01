@@ -8,9 +8,11 @@ interface INotesRepository{
 
     findByUserId(user_id:string):Promise<Note[]>;
 
+    findById(id:string):Promise<Note>;
+
     update(id:string, content:string):Promise<void>;
 
-    delete(id:string):Promise<Note>
+    delete(id:string):Promise<void>
 }
 
 
