@@ -14,7 +14,7 @@ class ListNoteController{
 
         const list2 = await list.execute(user_id)
 
-        console.log(list2)
+      
 
         return response.json(list2)
 

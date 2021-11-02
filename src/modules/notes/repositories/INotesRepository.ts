@@ -10,7 +10,7 @@ interface INotesRepository{
 
     findById(id:string):Promise<Note>;
 
-    update(id:string, content:string):Promise<void>;
+    update(id:string, content:string, title:string):Promise<Note>;
 
     delete(id:string):Promise<void>
 }

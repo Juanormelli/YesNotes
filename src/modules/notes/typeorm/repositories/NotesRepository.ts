@@ -35,12 +35,15 @@ class NotesRepository implements INotesRepository{
 
 
 
-    async update(id: string, content:string): Promise<void> {
+    async update(id: string, content:string, title:string): Promise<Note> {
         const note = await this.repository.findOne(id)
 
         note.content = content
+        note.title = title
 
         await this.repository.save(note)
+
+        return note
     }
 
 
